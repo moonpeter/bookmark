@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from bookmark.views import BookmarkListView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bookmark/', include('bookmark.urls')),
+    path('', BookmarkListView.as_view(), name='list'),
 ]
